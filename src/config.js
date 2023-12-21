@@ -1,9 +1,9 @@
 export const IMAGE_CDN_URL =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_324,c_fill/";
 export const REST_MENU_API_URL =
-  "https://cors-anywhere.herokuapp.com/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=latitude&lng=longitude&restaurantId=${resId}&catalog_qa=undefined&submitAction=ENTER";
+  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=latitude&lng=longitude&restaurantId=${resId}&catalog_qa=undefined&submitAction=ENTER";
 export const REST_LIST_API_URL =
-  "https://cors-anywhere.herokuapp.com/https://www.swiggy.com/dapi/restaurants/list/v5?lat=latitude&lng=longitude&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=latitude&lng=longitude&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
 export const INSTAMART_API_URL =
   "https://www.bigbasket.com/ui-svc/v1/category-tree";
 export const BB_IMAGE_URL =
