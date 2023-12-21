@@ -2,13 +2,12 @@ import HomeShimmer from "./Shimmer";
 import SearchBar from "./SearchBar";
 import CardList from "./CardList";
 import useRestaurantlist from "../utils/useRestaurantlist";
-import useOnline from '../utils/useOnline'
+import useOnline from "../utils/useOnline";
+import CORSWarn from "./CORSwarn";
+import { useState } from "react";
 
 export const Body = () => {
 
-  
-
- 
   const {
     allRestaurants,
     filteredRestaurants,
@@ -17,7 +16,7 @@ export const Body = () => {
     setSearchText,
     handleSearch,
   } = useRestaurantlist();
-  const isOnline = useOnline()
+  const isOnline = useOnline();
 
   if (!isOnline) return <h1>Please check your internet connection!!!</h1>;
   return loading ? (

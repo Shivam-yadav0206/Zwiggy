@@ -1,4 +1,4 @@
-import React, { lazy, Suspense} from "react";
+import React, { lazy, Suspense, useState} from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -12,10 +12,14 @@ import HomeShimmer from "./components/Shimmer";
 import { Provider } from "react-redux";
 import store from "./utils/store";
 import Cart from "./components/Cart"
-
+import CORSWarn from "./components/CORSwarn";
 const InstaMart = lazy(() => import("./components/InstaMart"))
 
+
+
 const AppLayout = () => {
+  const [isModalOpen, setIsModalOpen] = useState(true);
+  if(isModalOpen) return (<CORSWarn setIsModalOpen={setIsModalOpen} />);
   return (
     <Provider store={store}>
       <Header />
