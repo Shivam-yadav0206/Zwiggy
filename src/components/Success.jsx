@@ -1,46 +1,56 @@
-import React from 'react'
+import React from "react";
 import { Link } from "react-router-dom";
-import { clearCart } from "../utils/cartSlice";
-import { useDispatch } from "react-redux";
 
 const Success = () => {
-
-const dispatch = useDispatch();
-
   return (
     <div
       style={{
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        margin: "40px",
+        height: "100vh",
       }}>
-      <div style={{ textAlign: "center" }} className="payment-card">
+      <div
+        style={{ textAlign: "center", maxWidth: "550px" }}
+        className="payment-card">
         <div
           style={{
-            borderRadius: "200px",
+            borderRadius: "50%",
             height: "200px",
             width: "200px",
             background: "#F8FAF5",
-            margin: "0 auto",
+            margin: "0 auto 20px", // Added margin-bottom for spacing
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center", // Center the icon vertically
           }}>
-          <i className="checkmark">✓</i>
+          <i className="checkmark" style={{ fontSize: "3rem", color: "green" }}>
+            ✓
+          </i>{" "}
+          {/* Adjusted icon size and color */}
         </div>
-        <h1 className='pch'>Success</h1>
+        <h1 className="pch" style={{ color: "green" }}>
+          Success
+        </h1>{" "}
+        {/* Updated heading to indicate success */}
         <div style={{ width: "100%" }}>
-          <p className='pcp' style={{ margin: 0 }}>
+          <p className="pcp" style={{ margin: 0 }}>
             We received your purchase request
-            <br /> <span>we'll be in touch shortly!</span>
+            <br /> <span>We'll be in touch shortly!</span>
           </p>
         </div>
-        <Link to={"/"}>
-          <button onClick={() => dispatch(clearCart())} className="btn">
+        <Link to={"/"} style={{ textDecoration: "none" }}>
+          {" "}
+          {/* Changed to Link for navigation */}
+          <button className="btn">
+            {" "}
+            {/* Changed button to Link */}
             Back to Homepage
           </button>
         </Link>
       </div>
     </div>
   );
-}
+};
 
-export default Success
+export default Success;

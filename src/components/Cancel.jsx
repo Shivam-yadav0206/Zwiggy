@@ -7,21 +7,33 @@ const FailurePage = () => {
       style={{
         display: "flex",
         justifyContent: "center",
-              alignItems: "center",
-        margin: "40px"
+        alignItems: "center",
+        height: "100vh",
       }}>
-      <div style={{ textAlign: "center" }} className="payment-card">
+      <div
+        style={{ textAlign: "center", maxWidth: "550px" }}
+        className="payment-card">
         <div
           style={{
-            borderRadius: "200px",
+            borderRadius: "50%",
             height: "200px",
             width: "200px",
             background: "#F8FAF5",
-            margin: "0 auto",
+            margin: "0 auto 20px", // Added margin-bottom for spacing
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center", // Center the icon vertically
           }}>
-          <i className="failure-icon">❌</i> {/* Changed to failure icon */}
+          <i
+            className="failure-icon"
+            style={{ fontSize: "3rem", color: "red" }}>
+            ❌
+          </i>{" "}
+          {/* Adjusted icon size and color */}
         </div>
-        <h1 className="pch" style={{ color: "red" }}>Failure</h1>{" "}
+        <h1 className="pch" style={{ color: "red" }}>
+          Failure
+        </h1>{" "}
         {/* Updated heading to indicate failure */}
         <div style={{ width: "100%" }}>
           <p className="pcp" style={{ margin: 0 }}>
@@ -29,8 +41,14 @@ const FailurePage = () => {
             <br /> <span>Please try again later.</span>
           </p>
         </div>
-        <Link to={"/"}>
-          <button className="btn">Back to Homepage</button>
+        <Link to={"/"} style={{ textDecoration: "none" }}>
+          {" "}
+          {/* Changed to Link for navigation */}
+          <button className="btn">
+            {" "}
+            {/* Changed button to Link */}
+            Back to Homepage
+          </button>
         </Link>
       </div>
     </div>

@@ -27,7 +27,9 @@ const handlePayment = () => {
         // Check if the response contains a URL property
         if (data && data.url) {
           // Redirect to the URL returned by the server
+          dispatch(clearCart());
           window.location.href = data.url;
+
         } else {
           console.error("Invalid response from server:", data);
         }
