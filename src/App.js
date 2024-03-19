@@ -21,13 +21,15 @@ const AppLayout = () => {
   const [isModalOpen, setIsModalOpen] = useState(true);
 
   useEffect(() => {
-    if (
-      window.location.pathname === "/success" ||
-      window.location.pathname === "/cancel"
-    ) {
+    const shouldDisplayModal = sessionStorage.getItem("displayCORSModal");
+    if (shouldDisplayModal === "false") {
       setIsModalOpen(false);
     }
   }, []);
+
+  const handleSetCORSModal = (value) => {
+    sessionStorage.setItem("displayCORSModal", value.toString());
+  };
 
   if (window.location.pathname === "/success") return <Success />;
   if (window.location.pathname === "/cancel") return <Cancel />;
