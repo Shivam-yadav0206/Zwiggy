@@ -50,6 +50,8 @@ const AppLayout = () => {
           }
         />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/cancel" element={<Cancel />} />
+        <Route path="/success" element={<Success />} />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
