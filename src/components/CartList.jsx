@@ -33,7 +33,7 @@ const CartList = ({ item }) => {
         <div className="title">
           <h3>{name}</h3>
           <p className="price">
-            {`Price: Rs ${price ? price : "Not Available"} X ${quantity}`}
+            {`Price: Rs ${price ? price : 100} X ${quantity}`}
           </p>
           <p className="price">{`Quantity: ${quantity}`}</p>
         </div>
