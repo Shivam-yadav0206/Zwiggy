@@ -3,20 +3,34 @@ import { useDispatch } from "react-redux";
 import { addItem } from "../utils/cartSlice";
 
 const ItemCard = ({ item }) => {
-  const { name, price, imageId } = item;
+  const { id, name, price, imageId } = item;
 
   const dispatch = useDispatch();
   const handleAddItem = (item) => {
-    dispatch(addItem(item));
+    dispatch(
+      addItem({
+        id: id,
+        name: name,
+        price: price / 100,
+        image: imageId
+          ? IMAGE_CDN_URL + imageId
+          : "https://t4.ftcdn.net/jpg/02/51/95/53/240_F_251955356_FAQH0U1y1TZw3ZcdPGybwUkH90a3VAhb.jpg",
+        quantity: 1,
+      })
+    );
   };
-  
+  //console.log(item)
   return (
     <div className="menu-card">
       <div className="menu-card-image">
         <img
           width={500}
           height={195}
-          src={IMAGE_CDN_URL + imageId}
+          src={
+            imageId
+              ? IMAGE_CDN_URL + imageId
+              : "https://t4.ftcdn.net/jpg/02/51/95/53/240_F_251955356_FAQH0U1y1TZw3ZcdPGybwUkH90a3VAhb.jpg"
+          }
           alt={name}
         />
       </div>

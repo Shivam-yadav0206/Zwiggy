@@ -791,7 +791,7 @@ const ContactUs = () => {
               id="formMessage"
               class="form-control form-control-lg"
               rows="7"
-              placeholder="Mensagem"></textarea>
+              placeholder="Message"></textarea>
           </div>
 
           <div class="text-center">

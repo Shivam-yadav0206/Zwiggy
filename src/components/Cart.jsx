@@ -2,6 +2,8 @@ import { useSelector } from "react-redux";
 import CartList from "./CartList";
 import { clearCart } from "../utils/cartSlice";
 import { useDispatch } from "react-redux";
+import Pay from '../assets/pay.png'
+
 
 function Cart() {
   const cartItems = useSelector((store) => store.cart.items);
@@ -9,15 +11,43 @@ function Cart() {
   const handleEmptyCart = () => {
     dispatch(clearCart());
   };
+
+const handlePayment = () => {
+  try {
+    fetch("https://zwiggy-backend-tau.vercel.app/stripe-checkout", {
+      method: "POST",
+      headers: new Headers({ "Content-Type": "application/json" }),
+      body: JSON.stringify({
+        items: cartItems,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        // Check if the response contains a URL property
+        if (data && data.url) {
+          // Redirect to the URL returned by the server
+          window.location.href = data.url;
+        } else {
+          console.error("Invalid response from server:", data);
+        }
+      })
+      .catch((err) => console.log(err));
+  } catch (error) {
+    console.error("Error parsing cartItems:", error);
+  }
+};
+
+
+
+
+  console.log(cartItems);
   return (
     <>
       <div>
         {cartItems?.length > 0 ? (
           <>
-            <h1 className="cart">Cart Items</h1>
-            <button onClick={() => handleEmptyCart()} className="btn">
-              Empty Cart
-            </button>
+            <h1 className="cont">Cart Items</h1>
           </>
         ) : (
           <div
@@ -39,10 +69,24 @@ function Cart() {
         )}
       </div>
       <div className="menu-list">
-        {cartItems?.map((item) => (
-          <CartList key={item?.id} item={item} />
+        {cartItems?.map((item,index) => (
+          <CartList key={index} item={item} />
         ))}
       </div>
+      { cartItems?.length > 0 &&
+
+      
+        <div className="cont">
+
+          <button onClick={() => handleEmptyCart()} className="button-9">
+            Empty Cart
+          </button>
+          <button className="button-9" role="button" onClick={()=> handlePayment()}>
+            Pay Now
+            <img src={Pay} alt="Pay Now" />
+          </button>
+        </div>
+      }
     </>
   );
 }

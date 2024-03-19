@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import cartSlice from "../utils/cartSlice"
+import cartSlice, { initializeCartFromLocalStorage } from "./cartSlice";
 import posiSlice from "./posiSlice";
 
 const store = configureStore({
@@ -9,4 +9,14 @@ const store = configureStore({
     },
 });
 
+
+// Dispatch action to initialize cart state from local storage
+store.dispatch(initializeCartFromLocalStorage());
+
+
 export default store;
+
+
+
+
+

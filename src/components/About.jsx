@@ -3,17 +3,17 @@ import { Link } from "react-router-dom";
 const About = () => {
   return (
     <div>
-      <div class="responsive-container-block bigContainer">
-        <div class="responsive-container-block Container">
-          <p class="text-blk heading">About Us</p>
-          <p class="text-blk subHeading">
+      <div className="responsive-container-block bigContainer">
+        <div className="responsive-container-block Container">
+          <p className="text-blk heading">About Us</p>
+          <p className="text-blk subHeading">
             Welcome to Zwiggy – a culinary journey inspired by the visionary
             teachings of Akshay Saini, CEO of <a></a>
             <a href="https://namastedev.com/">namastedev.com</a>, a renowned
             figure in the realm of web development and an influential YouTube
             personality.
           </p>
-          <p class="text-blk subHeading">
+          <p className="text-blk subHeading">
             Rooted in the transformative insights from Namaste React, Zwiggy
             isn't just a clone—it's a journey in React and JavaScript growth.
             Every line of code in crafting this application has been a hands-on
@@ -24,18 +24,18 @@ const About = () => {
             exploration of new frontiers, and a celebration of the joy of
             coding.
           </p>
-          <p class="text-blk subHeading">
+          <p className="text-blk subHeading">
             #Zwiggy #NamasteReact #WebDevelopmentJourney 🚀🍔🖥️
           </p>
 
-          <div class="social-icons-container">
+          <div className="social-icons-container">
             <Link
               className="social-icon"
               to="https://github.com/Shivam-yadav0206"
               target="_blank"
               rel="noopener noreferrer">
               <img
-                class="socialIcon image-block"
+                className="socialIcon image-block"
                 src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/bb33.png"
               />
             </Link>
@@ -45,7 +45,7 @@ const About = () => {
               target="_blank"
               rel="noopener noreferrer">
               <img
-                class="socialIcon image-block"
+                className="socialIcon image-block"
                 src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/bb34.png"
               />
             </Link>
@@ -55,7 +55,7 @@ const About = () => {
               target="_blank"
               rel="noopener noreferrer">
               <img
-                class="socialIcon image-block"
+                className="socialIcon image-block"
                 src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/bb35.png"
               />
             </Link>
@@ -65,7 +65,7 @@ const About = () => {
               target="_blank"
               rel="noopener noreferrer">
               <img
-                class="socialIcon image-block"
+                className="socialIcon image-block"
                 src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/bb36.png"
               />
             </Link>

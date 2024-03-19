@@ -1,9 +1,9 @@
-import React, { lazy, Suspense, useState} from "react";
+import React, { lazy, Suspense, useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
-import About from "./components/About"
+import About from "./components/About";
 import ContactUs from "./components/ContactUs";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Error from "./components/Error";
@@ -11,15 +11,32 @@ import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import HomeShimmer from "./components/Shimmer";
 import { Provider } from "react-redux";
 import store from "./utils/store";
-import Cart from "./components/Cart"
+import Cart from "./components/Cart";
 import CORSWarn from "./components/CORSwarn";
-const InstaMart = lazy(() => import("./components/InstaMart"))
-
-
+import Success from "./components/Success";
+import Cancel from "./components/Cancel";
+const InstaMart = lazy(() => import("./components/InstaMart"));
 
 const AppLayout = () => {
   const [isModalOpen, setIsModalOpen] = useState(true);
-  if(isModalOpen) return (<CORSWarn setIsModalOpen={setIsModalOpen} />);
+
+  useEffect(() => {
+    const checkCORS = async () => {
+      try {
+        const response = await fetch("http://localhost:1234");
+
+        // If the request succeeds, CORS is enabled
+        setIsModalOpen(false);
+      } catch (error) {
+        // If the request fails due to CORS restrictions, CORS is not enabled
+        setIsModalOpen(true);
+      }
+    };
+
+    checkCORS();
+  }, []);
+
+  if (isModalOpen) return <CORSWarn setIsModalOpen={setIsModalOpen} />;
   return (
     <Provider store={store}>
       <Header />
@@ -48,6 +65,14 @@ const appRouter = createBrowserRouter([
         element: <ContactUs />,
       },
       {
+        path: "/success",
+        element: <Success />,
+      },
+      {
+        path: "/cancel",
+        element: <Cancel />,
+      },
+      {
         path: "/restaurant/:resId",
         element: <RestaurantMenu />,
       },
@@ -67,10 +92,8 @@ const appRouter = createBrowserRouter([
   },
 ]);
 
-
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={appRouter}/>);
+root.render(<RouterProvider router={appRouter} />);
 
 //npm run = npx;
 //npm run start = npm start
