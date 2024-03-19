@@ -21,10 +21,10 @@ const FailurePage = () => {
           }}>
           <i className="failure-icon">❌</i> {/* Changed to failure icon */}
         </div>
-        <h1 style={{ color: "red" }}>Failure</h1>{" "}
+        <h1 className="pch" style={{ color: "red" }}>Failure</h1>{" "}
         {/* Updated heading to indicate failure */}
         <div style={{ width: "100%" }}>
-          <p style={{ margin: 0 }}>
+          <p className="pcp" style={{ margin: 0 }}>
             Something went wrong with your purchase
             <br /> <span>Please try again later.</span>
           </p>

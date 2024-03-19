@@ -20,22 +20,6 @@ const InstaMart = lazy(() => import("./components/InstaMart"));
 const AppLayout = () => {
   const [isModalOpen, setIsModalOpen] = useState(true);
 
-  useEffect(() => {
-    const checkCORS = async () => {
-      try {
-        const response = await fetch("http://localhost:1234");
-
-        // If the request succeeds, CORS is enabled
-        setIsModalOpen(false);
-      } catch (error) {
-        // If the request fails due to CORS restrictions, CORS is not enabled
-        setIsModalOpen(true);
-      }
-    };
-
-    checkCORS();
-  }, []);
-
   if (isModalOpen) return <CORSWarn setIsModalOpen={setIsModalOpen} />;
   return (
     <Provider store={store}>

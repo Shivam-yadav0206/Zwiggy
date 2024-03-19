@@ -26,9 +26,9 @@ const dispatch = useDispatch();
           }}>
           <i className="checkmark">✓</i>
         </div>
-        <h1>Success</h1>
+        <h1 className='pch'>Success</h1>
         <div style={{ width: "100%" }}>
-          <p style={{ margin: 0 }}>
+          <p className='pcp' style={{ margin: 0 }}>
             We received your purchase request
             <br /> <span>we'll be in touch shortly!</span>
           </p>
