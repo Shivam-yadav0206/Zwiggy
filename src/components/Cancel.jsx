@@ -25,7 +25,7 @@ const FailurePage = () => {
             alignItems: "center", // Center the icon vertically
           }}>
           <i
-            className="failure-icon"
+            className="failure-icon pi"
             style={{ fontSize: "3rem", color: "red" }}>
             ❌
           </i>{" "}

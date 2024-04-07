@@ -24,7 +24,7 @@ const Success = () => {
             justifyContent: "center",
             alignItems: "center", // Center the icon vertically
           }}>
-          <i className="checkmark" style={{ fontSize: "3rem", color: "green" }}>
+          <i className="checkmark pi" style={{ fontSize: "3rem", color: "green" }}>
             ✓
           </i>{" "}
           {/* Adjusted icon size and color */}

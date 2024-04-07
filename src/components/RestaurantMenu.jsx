@@ -7,6 +7,7 @@ import useRestaurant from "../utils/useRestaurant";
 function RestaurantMenu() {
   const { resId } = useParams();
   const [restaurantInfo, menuList] = useRestaurant(resId);
+ // console.log(menuList);
 
   return !restaurantInfo? <HomeShimmer /> : (
       <>

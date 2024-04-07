@@ -18,13 +18,15 @@ const CartList = ({ item }) => {
   };
 
   return (
-    <div className="cart-card">
+    <div className="menu-card">
       <div className="menu-card-image">
         <img
           width={500}
           height={195}
           src={
-            image? image : "https://t4.ftcdn.net/jpg/02/51/95/53/240_F_251955356_FAQH0U1y1TZw3ZcdPGybwUkH90a3VAhb.jpg"
+            image
+              ? image
+              : "https://t4.ftcdn.net/jpg/02/51/95/53/240_F_251955356_FAQH0U1y1TZw3ZcdPGybwUkH90a3VAhb.jpg"
           }
           alt={name}
         />
@@ -35,7 +37,6 @@ const CartList = ({ item }) => {
           <p className="price">
             {`Price: Rs ${price ? price : 100} X ${quantity}`}
           </p>
-          <p className="price">{`Quantity: ${quantity}`}</p>
         </div>
         <div className="btn">
           {quantity >= 1 && (
@@ -43,7 +44,13 @@ const CartList = ({ item }) => {
               <button onClick={() => handleRemoveOne(item)} id="decrement">
                 -
               </button>
-              <input style={{width:"50px" }}type="number" id="input" value={quantity} readOnly />
+              <input
+                style={{ width: "50px" }}
+                type="number"
+                id="input"
+                value={quantity}
+                readOnly
+              />
               <button onClick={() => handleAddOne(item)} id="increment">
                 +
               </button>
@@ -56,9 +63,3 @@ const CartList = ({ item }) => {
 };
 
 export default CartList;
-
-//  : (
-//             <button onClick={() => handleRemoveItem(item)} className="btn1">
-//               Remove
-//             </button>
-//           )
