@@ -20,8 +20,9 @@ const useRestaurant = (resId) => {
       );
       const restaurantDetails = await list.json();
       const info = restaurantDetails?.data?.cards[2]?.card?.card?.info;
+      const groupedCard = restaurantDetails?.data?.cards;
       const menu = [
-        ...(restaurantDetails?.data?.cards[5]?.groupedCard?.cardGroupMap
+         ...(restaurantDetails?.data?.cards[5]?.groupedCard?.cardGroupMap
           ?.REGULAR?.cards[2]?.card?.card?.itemCards || []),
         ...(restaurantDetails?.data?.cards[5]?.groupedCard?.cardGroupMap
           ?.REGULAR?.cards[3]?.card?.card?.itemCards || []),
@@ -38,6 +39,7 @@ const useRestaurant = (resId) => {
         ...(restaurantDetails?.data?.cards[5]?.groupedCard?.cardGroupMap
           ?.REGULAR?.cards[1]?.card?.card?.categories?.[3]?.itemCards || []),
       ];
+      console.log(menu);
       setRestaurantInfo(info);
       setMenuList(menu);
     } catch (error) {
@@ -81,3 +83,44 @@ export default useRestaurant;
 //   ?.REGULAR?.cards[3]?.card?.card?.itemCards || []),
 // ...(restaurantDetails?.data?.cards[5]?.groupedCard?.cardGroupMap
 //   ?.REGULAR?.cards[4]?.card?.card?.itemCards || []),
+        
+  // ...(groupedCard?.[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[1]
+  //         ?.card?.card?.categories?.[0]?.itemCards || []),
+  //       ...(groupedCard?.[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[1]
+  //         ?.card?.card?.categories?.[1]?.itemCards || []),
+  //       ...(groupedCard?.[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[1]
+  //         ?.card?.card?.categories?.[2]?.itemCards || []),
+  //       ...(groupedCard?.[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[1]
+  //         ?.card?.card?.categories?.[3]?.itemCards || []),
+  //       ...(groupedCard?.[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[2]
+  //         ?.card?.card?.itemCards || []),
+  //       ...(groupedCard?.[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[3]
+  //         ?.card?.card?.itemCards || []),
+  //       ...(groupedCard?.[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[4]
+  //         ?.card?.card?.itemCards || []),
+  //       ...(groupedCard?.[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[5]
+  //         ?.card?.card?.itemCards || []),
+  //       ...(groupedCard?.[1]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[1]
+  //         ?.card?.card?.itemCards || []),
+  //       ...(groupedCard?.[1]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[2]
+  //         ?.card?.card?.itemCards || []),
+  //       ...(groupedCard?.[1]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[3]
+  //         ?.card?.card?.itemCards || []),
+  //       ...(groupedCard?.[1]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[4]
+  //         ?.card?.card?.itemCards || []),
+  //       ...(groupedCard?.[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[1]
+  //         ?.card?.card?.itemCards || []),
+  //       ...(groupedCard?.[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[2]
+  //         ?.card?.card?.itemCards || []),
+  //       ...(groupedCard?.[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[3]
+  //         ?.card?.card?.itemCards || []),
+  //       ...(groupedCard?.[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[4]
+  //         ?.card?.card?.itemCards || []),
+  //       ...(groupedCard?.[3]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[1]
+  //         ?.card?.card?.itemCards || []),
+  //       ...(groupedCard?.[3]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[2]
+  //         ?.card?.card?.itemCards || []),
+  //       ...(groupedCard?.[3]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[3]
+  //         ?.card?.card?.itemCards || []),
+  //       ...(groupedCard?.[3]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[4]
+  //         ?.card?.card?.itemCards || []),
