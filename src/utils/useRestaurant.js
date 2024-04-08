@@ -21,23 +21,44 @@ const useRestaurant = (resId) => {
       const restaurantDetails = await list.json();
       const info = restaurantDetails?.data?.cards[2]?.card?.card?.info;
       const groupedCard = restaurantDetails?.data?.cards;
+      console.log(restaurantDetails?.data?.cards);
       const menu = [
-         ...(restaurantDetails?.data?.cards[5]?.groupedCard?.cardGroupMap
-          ?.REGULAR?.cards[2]?.card?.card?.itemCards || []),
-        ...(restaurantDetails?.data?.cards[5]?.groupedCard?.cardGroupMap
-          ?.REGULAR?.cards[3]?.card?.card?.itemCards || []),
-        ...(restaurantDetails?.data?.cards[5]?.groupedCard?.cardGroupMap
-          ?.REGULAR?.cards[4]?.card?.card?.itemCards || []),
-        ...(restaurantDetails?.data?.cards[5]?.groupedCard?.cardGroupMap
-          ?.REGULAR?.cards[5]?.card?.card?.itemCards || []),
-        ...(restaurantDetails?.data?.cards[5]?.groupedCard?.cardGroupMap
-          ?.REGULAR?.cards[1]?.card?.card?.categories?.[0]?.itemCards || []),
-        ...(restaurantDetails?.data?.cards[5]?.groupedCard?.cardGroupMap
-          ?.REGULAR?.cards[1]?.card?.card?.categories?.[1]?.itemCards || []),
-        ...(restaurantDetails?.data?.cards[5]?.groupedCard?.cardGroupMap
-          ?.REGULAR?.cards[1]?.card?.card?.categories?.[2]?.itemCards || []),
-        ...(restaurantDetails?.data?.cards[5]?.groupedCard?.cardGroupMap
-          ?.REGULAR?.cards[1]?.card?.card?.categories?.[3]?.itemCards || []),
+        ...(restaurantDetails?.data?.cards?.[5]?.groupedCard?.cardGroupMap
+          ?.REGULAR?.cards?.[1]?.card?.card?.itemCards || []),
+        ...(restaurantDetails?.data?.cards?.[5]?.groupedCard?.cardGroupMap
+          ?.REGULAR?.cards?.[2]?.card?.card?.itemCards || []),
+        ...(restaurantDetails?.data?.cards?.[5]?.groupedCard?.cardGroupMap
+          ?.REGULAR?.cards?.[3]?.card?.card?.itemCards || []),
+        ...(restaurantDetails?.data?.cards?.[5]?.groupedCard?.cardGroupMap
+          ?.REGULAR?.cards?.[4]?.card?.card?.itemCards || []),
+        ...(restaurantDetails?.data?.cards?.[5]?.groupedCard?.cardGroupMap
+          ?.REGULAR?.cards?.[5]?.card?.card?.itemCards || []),
+        ...(restaurantDetails?.data?.cards?.[5]?.groupedCard?.cardGroupMap
+          ?.REGULAR?.cards?.[1]?.card?.card?.categories?.[0]?.itemCards || []),
+        ...(restaurantDetails?.data?.cards?.[5]?.groupedCard?.cardGroupMap
+          ?.REGULAR?.cards?.[1]?.card?.card?.categories?.[1]?.itemCards || []),
+        ...(restaurantDetails?.data?.cards?.[5]?.groupedCard?.cardGroupMap
+          ?.REGULAR?.cards?.[1]?.card?.card?.categories?.[2]?.itemCards || []),
+        ...(restaurantDetails?.data?.cards?.[5]?.groupedCard?.cardGroupMap
+          ?.REGULAR?.cards?.[1]?.card?.card?.categories?.[3]?.itemCards || []),
+        ...(restaurantDetails?.data?.cards?.[4]?.groupedCard?.cardGroupMap
+          ?.REGULAR?.cards?.[1]?.card?.card?.itemCards || []),
+        ...(restaurantDetails?.data?.cards?.[4]?.groupedCard?.cardGroupMap
+          ?.REGULAR?.cards?.[2]?.card?.card?.itemCards || []),
+        ...(restaurantDetails?.data?.cards?.[4]?.groupedCard?.cardGroupMap
+          ?.REGULAR?.cards?.[3]?.card?.card?.itemCards || []),
+        ...(restaurantDetails?.data?.cards?.[4]?.groupedCard?.cardGroupMap
+          ?.REGULAR?.cards?.[4]?.card?.card?.itemCards || []),
+        ...(restaurantDetails?.data?.cards?.[4]?.groupedCard?.cardGroupMap
+          ?.REGULAR?.cards?.[5]?.card?.card?.itemCards || []),
+        ...(restaurantDetails?.data?.cards?.[4]?.groupedCard?.cardGroupMap
+          ?.REGULAR?.cards?.[1]?.card?.card?.categories?.[0]?.itemCards || []),
+        ...(restaurantDetails?.data?.cards?.[4]?.groupedCard?.cardGroupMap
+          ?.REGULAR?.cards?.[1]?.card?.card?.categories?.[1]?.itemCards || []),
+        ...(restaurantDetails?.data?.cards?.[4]?.groupedCard?.cardGroupMap
+          ?.REGULAR?.cards?.[1]?.card?.card?.categories?.[2]?.itemCards || []),
+        ...(restaurantDetails?.data?.cards?.[4]?.groupedCard?.cardGroupMap
+          ?.REGULAR?.cards?.[1]?.card?.card?.categories?.[3]?.itemCards || []),
       ];
       console.log(menu);
       setRestaurantInfo(info);
