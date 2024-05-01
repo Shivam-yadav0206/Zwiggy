@@ -2,7 +2,9 @@ import React from "react";
 import { IMAGE_CDN_URL } from "../config";
 
 function m(n, d) {
-  (x = ("" + n).length), (p = Math.pow), (d = p(10, d));
+  const x = (("" + n).length);
+  (p = Math.pow);
+  (d = p(10, d));
   x -= x % 3;
   return Math.round((n * d) / p(10, x)) / d + " kMGTPE"[x / 3];
 }
