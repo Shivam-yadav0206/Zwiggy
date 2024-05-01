@@ -2,10 +2,14 @@ import React from "react";
 import { IMAGE_CDN_URL } from "../config";
 
 function m(n, d) {
-  const x = (("" + n).length);
-  (p = Math.pow);
-  (d = p(10, d));
+  let x = ("" + n).length; // Calculate the number of digits in n
+  const p = Math.pow; // Store Math.pow in a variable p
+  d = p(10, d); // Calculate 10 raised to the power of d
+
+  // Reduce x to the nearest multiple of 3
   x -= x % 3;
+
+  // Calculate the rounded value of (n * d) / (10^x) and append the appropriate abbreviation
   return Math.round((n * d) / p(10, x)) / d + " kMGTPE"[x / 3];
 }
 
