@@ -41,13 +41,14 @@ export const Body = () => {
               </div>
 
               <div class="home__content text-center md:basis-1/2 md:text-start lg:basis-3/5">
-                <h1 class="home__title">HAPPY TUMMY WITH TASTY BURGERS.</h1>
+                <h1 class="home__title">HAPPY TUMMY WITH TASTY FOOD ITEMS.</h1>
                 <div class="separator mx-auto md:mx-0"></div>
-                <p class="paragraph">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Voluptatum,libero magni? Fugiat perspiciatis eius, sequi
-                  aliquid ullam dolorem temporibus voluptate corrupti fugit
-                  saepe sunt unde culpa? Tenetur quos quod laudantium.
+                <p className="paragraph">
+                  Welcome to FOODMATA – a culinary journey inspired by the
+                  visionary teachings of Akshay Saini, CEO of <a></a>
+                  <a href="https://namastedev.com/">namastedev.com</a>, a
+                  renowned figure in the realm of web development and an
+                  influential YouTube personality.
                 </p>
                 <div class="text-base flex items-center justify-center gap-4 py-10 md:justify-start md:gap-20">
                   <div class="text-center">
@@ -69,9 +70,7 @@ export const Body = () => {
                   </div>
                 </div>
 
-                <button class="btn btn-primary">
-                  learn more
-                </button>
+                <button class="btn btn-primary">learn more</button>
               </div>
             </div>
           </section>
@@ -90,7 +89,7 @@ export const Body = () => {
 
                 <div>
                   <div class="mb-2">
-                    <h4 class="card__title">Food</h4>
+                    <h4 class="card__title">Quick bites</h4>
                     <p class="text-xs">Lorem ipsum dolor sit.</p>
                   </div>
 
@@ -112,7 +111,7 @@ export const Body = () => {
 
                 <div>
                   <div class="mb-2">
-                    <h4 class="card__title">Food</h4>
+                    <h4 class="card__title">Snacks</h4>
                     <p class="text-xs">Lorem ipsum dolor sit.</p>
                   </div>
 
@@ -134,7 +133,7 @@ export const Body = () => {
 
                 <div>
                   <div class="mb-2">
-                    <h4 class="card__title">Food</h4>
+                    <h4 class="card__title">Bevereges</h4>
                     <p class="text-xs">Lorem ipsum dolor sit.</p>
                   </div>
 
@@ -196,7 +195,9 @@ export const Body = () => {
           />
           {loading ? (
             <HomeShimmer />
-          ) : <CardList filteredRestaurants={filteredRestaurants} />}
+          ) : (
+            <CardList filteredRestaurants={filteredRestaurants} />
+          )}
         </div>
       </div>
     </>
