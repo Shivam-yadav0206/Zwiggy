@@ -8,13 +8,13 @@ const CORSWarn = ({ setIsModalOpen }) => {
   };
 
   return (
-    <div className="modal-cont">
+    <div className="modal-cont ">
       <article>
-        <h1>
+        <h1 style={{ color: "black", fontSize: "17px", fontWeight: "bold" }}>
           This project uses REAL world data from SWIGGY's API for which you have
           to enable CORS extension
         </h1>
-        <p>
+        <p style={{ color: "black", fontSize: "17px", fontWeight: "bold" }}>
           CORS is a browser safety feature to prevent us from making
           cross-origin requests. Read more about it{" "}
           <Link
@@ -24,12 +24,14 @@ const CORSWarn = ({ setIsModalOpen }) => {
             here
           </Link>
         </p>
-        <p>i.e from www.abc.com to www.xyz.com</p>
-        <ol>
-          <li>Visit the given link below.</li>
-          <li>Add the Extension to your browser.</li>
-          <li>Toggle it to ON, i.e. Enable CORS.</li>
-          <li>Refresh this page and start surfing.</li>
+        <p style={{ color: "black", fontSize: "17px", fontWeight: "normal" }}>
+          i.e from www.abc.com to www.xyz.com
+        </p>
+        <ol style={{ color: "black", fontSize: "17px", fontWeight: "normal" }}>
+          <li>1️⃣ Visit the given link below.</li>
+          <li>2️⃣ Add the Extension to your browser.</li>
+          <li>3️⃣ Toggle it to ON, i.e. Enable CORS.</li>
+          <li>4️⃣ Refresh this page and start surfing.</li>
         </ol>
         <p>If you already use it, you are Good to GO...</p>
         <div className="modal-div">

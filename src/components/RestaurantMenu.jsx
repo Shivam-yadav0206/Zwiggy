@@ -9,15 +9,30 @@ function RestaurantMenu() {
   const [restaurantInfo, menuList] = useRestaurant(resId);
  // console.log(menuList);
 
-  return !restaurantInfo? <HomeShimmer /> : (
-      <>
+  return !restaurantInfo ? (
+    <HomeShimmer />
+  ) : (
+    <>
       <div className="menu-list">
         <RestaurantInfo info={restaurantInfo} />
       </div>
-      <div data-testid="menu" className="menu-list">
-        {menuList.map((item) => (
-          <ItemCard key={item?.card?.info?.id} item = {item?.card?.info} />
-        ))}
+      <div className="container">
+        <div className="mx-auto text-center">
+          <div data-testid="menu" className="menu__items">
+            <ul
+              data-testid="res-list"
+              className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
+              {menuList.map((item) => (
+                <li class="item_wrap food">
+                  <ItemCard
+                    key={item?.card?.info?.id}
+                    item={item?.card?.info}
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </>
   );

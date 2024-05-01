@@ -14,75 +14,109 @@ const RestaurantCard = ({
   costForTwo,
 }) => {
   return (
-    <div className="card">
-      <Card
-        sx={{
-          width: 300,
-          height: 400,
-          display: "-webkit-box",
-          WebkitLineClamp: 1, // Set the maximum number of lines
-          WebkitBoxOrient: "vertical",
-          overflow: "hidden",
-          textOverflow: "ellipsis",
-        }}>
-        <CardMedia
-          sx={{
-            height: 210,
-            display: "-webkit-box",
-            WebkitLineClamp: 1, // Set the maximum number of lines
-            WebkitBoxOrient: "vertical",
-            overflow: "hidden",
-            textOverflow: "ellipsis",
-          }}
-          image={
+    <li className="item_wrap food">
+      <div className="h-56 grid place-items-center bg-primaryColorLight dark:bg-darkColorLight dark:hover:bg-secondaryColor rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">
+        <img
+          src={
             cloudinaryImageId
               ? IMAGE_CDN_URL + cloudinaryImageId
               : "https://media.istockphoto.com/id/1316145932/photo/table-top-view-of-spicy-food.jpg?s=612x612&w=0&k=20&c=eaKRSIAoRGHMibSfahMyQS6iFADyVy1pnPdy1O5rZ98="
           }
-          // title={name}
+          alt="food image"
+          className="w-40 hover:scale-110 ease-linear duration-200 md:w-48 lg:w-24"
         />
-        <CardContent>
-          <Typography
-            sx={{
-              display: "-webkit-box",
-              WebkitLineClamp: 1, // Set the maximum number of lines
-              WebkitBoxOrient: "vertical",
-              overflow: "hidden",
-              textOverflow: "ellipsis",
-            }}
-            gutterBottom
-            variant="h5"
-            component="div">
-            {name}
-          </Typography>
-          <Typography gutterBottom variant="h6" component="div">
-            {locality}
-          </Typography>
-          <Typography
-            sx={{
-              display: "-webkit-box",
-              WebkitLineClamp: 1, // Set the maximum number of lines
-              WebkitBoxOrient: "vertical",
-              overflow: "hidden",
-              textOverflow: "ellipsis",
-              marginBottom: "15px",
-            }}
-            gutterBottom
-            variant="body1"
-            component="div">
-            {cuisines?.join(", ")}
-          </Typography>
+      </div>
 
-          <Typography variant="body1" color="text.secondary">
-            {`Rating:  ${avgRating}`}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {costForTwo}
-          </Typography>
-        </CardContent>
-      </Card>
-    </div>
+      <div className="pt-5">
+        <div className="container__text__star mb-5">
+          {avgRating &&
+            Array.from({ length: Math.ceil(avgRating) }).map((_, index) => (
+              <span key={index} className="fa fa-star checked"></span>
+            ))}
+        </div>
+        <div className="mb-2">
+          <h4 className="card__title">{name}</h4>
+          <div className="max-w-xs overflow-hidden">
+            <p className="truncate paragraph hover:line-clamp-none">
+              {cuisines?.join(", ")}
+            </p>
+          </div>
+          <p className="paragraph">{locality}</p>
+          <p className="paragraph">{`Rating:  ${avgRating}`}</p>
+        </div>
+
+        <p className="text-secondaryColor">{costForTwo}</p>
+      </div>
+    </li>
   );
 };
 
 export default RestaurantCard;
+    // <div className="card">
+    //   <Card
+    //     sx={{
+    //       width: 300,
+    //       height: 400,
+    //       display: "-webkit-box",
+    //       WebkitLineClamp: 1, // Set the maximum number of lines
+    //       WebkitBoxOrient: "vertical",
+    //       overflow: "hidden",
+    //       textOverflow: "ellipsis",
+    //     }}>
+    //     <CardMedia
+    //       sx={{
+    //         height: 210,
+    //         display: "-webkit-box",
+    //         WebkitLineClamp: 1, // Set the maximum number of lines
+    //         WebkitBoxOrient: "vertical",
+    //         overflow: "hidden",
+    //         textOverflow: "ellipsis",
+    //       }}
+    //       image={
+    //         cloudinaryImageId
+    //           ? IMAGE_CDN_URL + cloudinaryImageId
+    //           : "https://media.istockphoto.com/id/1316145932/photo/table-top-view-of-spicy-food.jpg?s=612x612&w=0&k=20&c=eaKRSIAoRGHMibSfahMyQS6iFADyVy1pnPdy1O5rZ98="
+    //       }
+    //       // title={name}
+    //     />
+    //     <CardContent>
+    //       <Typography
+    //         sx={{
+    //           display: "-webkit-box",
+    //           WebkitLineClamp: 1, // Set the maximum number of lines
+    //           WebkitBoxOrient: "vertical",
+    //           overflow: "hidden",
+    //           textOverflow: "ellipsis",
+    //         }}
+    //         gutterBottom
+    //         variant="h5"
+    //         component="div">
+    //         {name}
+    //       </Typography>
+    //       <Typography gutterBottom variant="h6" component="div">
+    //         {locality}
+    //       </Typography>
+    //       <Typography
+    //         sx={{
+    //           display: "-webkit-box",
+    //           WebkitLineClamp: 1, // Set the maximum number of lines
+    //           WebkitBoxOrient: "vertical",
+    //           overflow: "hidden",
+    //           textOverflow: "ellipsis",
+    //           marginBottom: "15px",
+    //         }}
+    //         gutterBottom
+    //         variant="body1"
+    //         component="div">
+    //         {cuisines?.join(", ")}
+    //       </Typography>
+
+    //       <Typography variant="body1" color="text.secondary">
+    //         {`Rating:  ${avgRating}`}
+    //       </Typography>
+    //       <Typography variant="body2" color="text.secondary">
+    //         {costForTwo}
+    //       </Typography>
+    //     </CardContent>
+    //   </Card>
+    // </div>

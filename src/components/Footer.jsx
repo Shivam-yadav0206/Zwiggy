@@ -2,80 +2,81 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="footer-distributed footer-parent">
-      <div className="footer-left">
-        <h3>
-          <img
-            margin="10px"
-            width={150}
-            src="https://img.freepik.com/free-photo/diet-health-nutrition-life-food-eating-concept_53876-120817.jpg?w=1060&t=st=1700734100~exp=1700734700~hmac=6511f79676014d9e4b00b6c0156ea5b230292563a064b446d278a4059c8be8e1"
-          />
-        </h3>
 
-        <p className="footer-links">
-          <Link to="/">Home </Link>
-          <Link to="/about">About </Link>
-          <Link to="/contact">Contact Us </Link>
-          <Link to="/instamart">InstaMart </Link>
-        </p>
+        <footer>
+      <section className="footer">
+        <div className="container">
+          <ul className="grid grid-cols-1 items-start gap-5 pb-5 md:grid-cols-2 lg:grid-cols-4">
+            <li>
+              <div className="space-y-3">
+                <a href="" className="text-4xl font-oswald uppercase">
+                  Bur<span className="text-secondaryColor">ger</span>
+                </a>
 
-        <p className="footer-company-name">Zwiggy © 2023</p>
-      </div>
+                <p className="text-xs">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                </p>
+              </div>
+            </li>
 
-      <div className="footer-center">
-        <div>
-          <i className="fa fa-map-marker"></i>
-          <p>
-            <span>Sector 214 Noida, IN</span> Uttar Pradesh, India
-          </p>
+            <li>
+              <div className="flex flex-col gap-3">
+                <h3 className="text-lg uppercase font-oswald">SUPPORT</h3>
+                <a href="" className="text-xs hover:text-secondaryColor">FAQ's</a>
+                <a href="" className="text-xs hover:text-secondaryColor">Privacy Policy</a>
+                <a href="" className="text-xs hover:text-secondaryColor">Term & Condition</a>
+                <a href="" className="text-xs hover:text-secondaryColor">Contact</a>
+              </div>
+            </li>
+
+            <li className="space-y-8">
+              <div className="space-y-2">
+                <h3 className="text-lg uppercase font-oswald">phone</h3>
+
+                <p className="flex items-center gap-2 text-xs">
+                  <i className="fa-solid fa-phone text-lg text-secondaryColor"></i>
+                  +1 000 000 0000
+                </p>
+              </div>
+
+              <div className="space-y-2">
+                <h3 className="text-lg uppercase font-oswald">email</h3>
+
+                <p className="flex items-center gap-2 text-xs">
+                  <i className="fa-solid fa-envelope text-lg text-secondaryColor"></i>
+                  burger.info@email.com
+                </p>
+              </div>
+            </li>
+
+            <li className="space-y-8">
+              <div className="space-y-2">
+                <h3 className="text-lg uppercase font-oswald">address</h3>
+
+                <p className="flex items-center gap-2 text-xs">
+                  <i className="fa-solid fa-location-dot text-lg text-secondaryColor"></i>
+                  Address goes here
+                </p>
+              </div>
+
+              <div className="space-y-2">
+                <h3 className="text-lg uppercase font-oswald">follow us</h3>
+
+                <div className="space-x-3">
+                  <i className="fa-brands fa-facebook-f text-lg cursor-pointer text-secondaryColor hover:-translate-y-1 ease-in duration-200"></i>
+                  <i className="fa-brands fa-twitter text-lg cursor-pointer text-secondaryColor hover:-translate-y-1 ease-in duration-200"></i>
+                  <i className="fa-brands fa-square-instagram text-lg cursor-pointer text-secondaryColor hover:-translate-y-1 ease-in duration-200"></i>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <div className="flex flex-col items-center border-t border-primaryColorLight dark:border-darkColorLight py-5 md:flex-row md:justify-between">
+            <p className="paragraph">Burger Template Kit by Light Code</p>
+            <p className="paragraph">Copyright © 2023. All rights reserved.</p>
+          </div>
         </div>
-
-        <div>
-          <i className="fa fa-phone"></i>
-          <p>+91 8090934506</p>
-        </div>
-
-        <div>
-          <i className="fa fa-envelope"></i>
-          <p>
-            <a href="mailto:shivam.yadav0206@outlook.com">
-              shivam.yadav0206@outlook.com
-            </a>
-          </p>
-        </div>
-      </div>
-
-      <div className="footer-right">
-        <p className="footer-company-about">
-          <span>About the company</span>
-          Zwiggy is a popular food delivery and restaurant discovery platform,
-          connecting users with diverse culinary experiences.
-        </p>
-
-        <div className="footer-icons">
-          <Link
-            to="https://www.instagram.com/_s_h_i_va_m/"
-            target="_blank"
-            rel="noopener noreferrer">
-            <i className="fa fa-instagram"></i>
-          </Link>
-          <Link
-            to="https://www.linkedin.com/in/shivam-yadav-348a65220/"
-            target="_blank"
-            rel="noopener noreferrer">
-            <i className="fa fa-linkedin"></i>
-          </Link>
-          <Link to="/" target="_blank" rel="noopener noreferrer">
-            <i className="fa fa-twitter"></i>
-          </Link>
-          <Link
-            to="https://github.com/Shivam-yadav0206"
-            target="_blank"
-            rel="noopener noreferrer">
-            <i className="fa fa-github"></i>
-          </Link>
-        </div>
-      </div>
+      </section>
     </footer>
   );
 };

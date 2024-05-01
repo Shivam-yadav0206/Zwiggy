@@ -3,24 +3,200 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zwiggy</title>
-        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
+    <title>FoodMata</title>
     <link
-        href="https://fonts.googleapis.com/css?family=Rubik"
-        rel="stylesheet"
-      />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
-<link
+      rel="shortcut icon"
+      href="https://i.pinimg.com/736x/47/96/33/4796332c07bf0d6264b4b4eb3592c929.jpg"
+      type="image/x-icon" />
+
+    <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="index.css" />
-    
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+
+    <!--~~~~~~~~~~~~~~~ Remix Icon ~~~~~~~~~~~~~~~-->
     <link
-      href="https://fonts.googleapis.com/css?family=Encode+Sans+Semi+Condensed:100,200,300,400"
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
       rel="stylesheet" />
+
+    <!--  Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link href="./index.css" rel="stylesheet" />
   </head>
   <body>
     <div id="root">Not Rendered</div>
     <script type="module" src="./src/App.js"></script>
+    <script>
+      /*~~~~~~~~~~~~~~~ TOGGLE BUTTON ~~~~~~~~~~~~~~~*/
+      const hamburger = document.getElementById("hamburger");
+      const navMenu = document.getElementById("nav-menu");
+      const closeIcon = document.getElementById("nav-close");
+      const navLink = document.querySelectorAll(".nav__link");
+
+      navLink.forEach((link) =>
+        link.addEventListener("click", () => {
+          navMenu.classList.add("hidden");
+        })
+      );
+
+      closeIcon.addEventListener("click", () => {
+        navMenu.classList.add("hidden");
+      });
+
+      hamburger.addEventListener("click", () => {
+        navMenu.classList.remove("hidden");
+      });
+
+      /*~~~~~~~~~~~~~~~ TABS ~~~~~~~~~~~~~~~*/
+      const tabs = document.querySelectorAll(".tabs_wrap ul li");
+      const all = document.querySelectorAll(".item_wrap");
+      const foods = document.querySelectorAll(".food");
+      const beverages = document.querySelectorAll(".beverage");
+      const snacks = document.querySelectorAll(".snack");
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          tabs.forEach((tab) => {
+            tab.classList.remove("active");
+          });
+
+          tab.classList.add("active");
+
+          const tabval = tab.getAttribute("data-tabs");
+
+          all.forEach((item) => {
+            item.style.display = "none";
+          });
+
+          if (tabval == "food") {
+            foods.forEach((item) => {
+              item.style.display = "block";
+            });
+          } else if (tabval == "snack") {
+            snacks.forEach((item) => {
+              item.style.display = "block";
+            });
+          } else if (tabval == "beverage") {
+            beverages.forEach((item) => {
+              item.style.display = "block";
+            });
+          } else {
+            all.forEach((item) => {
+              item.style.display = "block";
+            });
+          }
+        });
+      });
+
+      /*~~~~~~~~~~~~~~~ DARK LIGHT THEME ~~~~~~~~~~~~~~~*/
+      const html = document.querySelector("html");
+      const themeBtn = document.getElementById("theme-toggle");
+
+      if (localStorage.getItem("mode") == "dark") {
+        darkMode();
+      } else {
+        lightMode();
+      }
+
+      themeBtn.addEventListener("click", (e) => {
+        if (localStorage.getItem("mode") == "light") {
+          darkMode();
+        } else {
+          lightMode();
+        }
+      });
+
+      function darkMode() {
+        html.classList.add("dark");
+        themeBtn.classList.replace("ri-moon-line", "ri-sun-line");
+        localStorage.setItem("mode", "dark");
+      }
+
+      function lightMode() {
+        html.classList.remove("dark");
+        themeBtn.classList.replace("ri-sun-line", "ri-moon-line");
+        localStorage.setItem("mode", "light");
+      }
+
+      /*~~~~~~~~~~~~~~~ SHOW SCROLL UP ~~~~~~~~~~~~~~~*/
+      const scrollUp = () => {
+        const scrollUpBtn = document.getElementById("scroll-up");
+
+        if (this.scrollY >= 250) {
+          scrollUpBtn.classList.remove("-bottom-1/2");
+          scrollUpBtn.classList.add("bottom-4");
+        } else {
+          scrollUpBtn.classList.add("-bottom-1/2");
+          scrollUpBtn.classList.remove("bottom-4");
+        }
+      };
+      window.addEventListener("scroll", scrollUp);
+
+      /*~~~~~~~~~~~~~~~ CHANGE BACKGROUND HEADER ~~~~~~~~~~~~~~~*/
+      const scrollHeader = () => {
+        const header = document.getElementById("header");
+
+        if (this.scrollY >= 50) {
+          header.classList.add("border-b", "border-secondaryColor");
+        } else {
+          header.classList.remove("border-b", "border-secondaryColor");
+        }
+      };
+      window.addEventListener("scroll", scrollHeader);
+
+      /*~~~~~~~~~~~~~~~ SCROLL SECTIONS ACTIVE LINK ~~~~~~~~~~~~~~~*/
+      const activeLink = () => {
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav__link");
+
+        let current = "home";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+
+          if (this.scrollY >= sectionTop - 60) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((item) => {
+          item.classList.remove("text-secondaryColor");
+          if (item.href.includes(current)) {
+            item.classList.add("text-secondaryColor");
+          }
+        });
+      };
+
+      window.addEventListener("scroll", activeLink);
+
+      /*~~~~~~~~~~~~~~~ SCROLL REVEAL ANIMATION ~~~~~~~~~~~~~~~*/
+      const sr = ScrollReveal({
+        origin: "top",
+        distance: "60px",
+        duration: 2500,
+        delay: 400,
+      });
+
+      sr.reveal(".home__image");
+      sr.reveal(".home__content", { origin: "bottom" });
+
+      sr.reveal(".category__card", { interval: 300 });
+
+      sr.reveal(".promo__card-1", { origin: "left" });
+      sr.reveal(".promo__card-2", { origin: "right" });
+
+      sr.reveal(".about__img", { origin: "bottom" });
+      sr.reveal(".about__content", { origin: "top" });
+
+      sr.reveal(".menu__items", { origin: "left" });
+
+      sr.reveal(".customer__review", { origin: "right" });
+
+      sr.reveal(".footer");
+    </script>
   </body>
 </html>
