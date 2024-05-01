@@ -7,27 +7,6 @@ const SearchBar = ({
   filteredRestaurants,
 }) => {
   return filteredRestaurants?.length > 0 ? (
-    // <div className="wrap">
-    //   <div className="search">
-    //     <input
-    //       data-testid="search-input"
-    //       type="text"
-    //       className="searchTerm"
-    //       placeholder="Search Restaurants"
-    //       value={searchText}
-    //       onChange={(e) => {
-    //         onSearchChange(e.target.value);
-    //       }}
-    //     />
-    //     <button
-    //       data-testid="search"
-    //       type="submit"
-    //       className="searchButton"
-    //       onClick={onSearchClick}>
-    //       <i className="fa fa-search"></i>
-    //     </button>
-    //   </div>
-    // </div>
     <section id="contact" className="flex  justify-center mb-8 mt-[-2rem]">
       <div class="flex flex-col gap-5 md:items-center md:flex-row">
         <div class="max-w-[25rem] flex flex-col gap-3 md:flex-row md:flex-1 justify-center mt-3">

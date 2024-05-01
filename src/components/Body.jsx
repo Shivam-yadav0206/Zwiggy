@@ -204,36 +204,3 @@ export const Body = () => {
 };
 
 export default Body;
-<div class=" mx-auto text-center">
-  <h2 class="section__title">OUR BEST MENU</h2>
-  <div class="separator mx-auto"></div>
-  <p class="paragraph">
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-    ligula eget dolor. Aenean massa.
-  </p>
-
-  <div class="tabs_wrap">
-    <ul class="flex flex-wrap justify-center gap-2 py-10">
-      <li
-        data-tabs="all"
-        class="btn bg-primaryColorLight dark:bg-darkColorLight active">
-        All
-      </li>
-      <li
-        data-tabs="food"
-        class="btn bg-primaryColorLight dark:bg-darkColorLight">
-        Food
-      </li>
-      <li
-        data-tabs="snack"
-        class="btn bg-primaryColorLight dark:bg-darkColorLight">
-        Snack
-      </li>
-      <li
-        data-tabs="beverage"
-        class="btn bg-primaryColorLight dark:bg-darkColorLight">
-        Beverage
-      </li>
-    </ul>
-  </div>
-</div>;
