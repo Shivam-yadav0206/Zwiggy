@@ -23,7 +23,7 @@ function RestaurantMenu() {
               data-testid="res-list"
               className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
               {menuList.map((item) => (
-                <li class="item_wrap food">
+                <li className="item_wrap food">
                   <ItemCard
                     key={item?.card?.info?.id}
                     item={item?.card?.info}

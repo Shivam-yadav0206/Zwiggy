@@ -18,14 +18,14 @@ function InstaMart() {
           marginTop: "5rem",
         }}>
         <h2
-          class="section__title"
+          className="section__title"
           style={{
             display: "flex",
             justifyContent: "center",
           }}>
           OUR Categories
         </h2>
-        <div class="separator mx-auto"></div>
+        <div className="separator mx-auto"></div>
 
         <div className="menu__items">
           <ul className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">

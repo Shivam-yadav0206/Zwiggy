@@ -18,7 +18,7 @@ module.exports = {
         blackColor: "#000",
         greenColor: "#007936",
         redColor: "#cc3433",
-        darkColor: "#000",
+        darkColor: "black",
         darkColorLight: "#171717",
       },
       keyframes: {

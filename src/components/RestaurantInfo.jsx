@@ -28,8 +28,8 @@ function RestaurantInfo({ info }) {
   const { deliveryTime } = sla;
   return (
     <section id="about">
-      <div class="container flex flex-col gap-10 md:flex-row">
-        <div class="about__img flex-1">
+      <div className="container flex flex-col gap-10 md:flex-row">
+        <div className="about__img flex-1">
           <img
             src={IMAGE_CDN_URL + cloudinaryImageId}
             alt={name}
@@ -37,39 +37,39 @@ function RestaurantInfo({ info }) {
           />
         </div>
 
-        <div class="about__content flex-1">
-          <h2 class="section__title">{name}</h2>
+        <div className="about__content flex-1">
+          <h2 className="section__title">{name}</h2>
           <div className="container__text__star mb-5">
             {avgRating &&
               Array.from({ length: Math.ceil(avgRating) }).map((_, index) => (
                 <span key={index} className="fa fa-star checked"></span>
               ))}
           </div>
-          <div class="separator"></div>
-          <p class="paragraph">{cuisines.join(", ")}</p>
-          <ul class="grid grid-cols-2 py-5 space-y-1">
-            <li class="text-xs text-paragraphColor">
-              <i class="fa-solid fa-check text-secondaryColor"></i>
+          <div className="separator"></div>
+          <p className="paragraph">{cuisines.join(", ")}</p>
+          <ul className="grid grid-cols-2 py-5 space-y-1">
+            <li className="text-xs text-paragraphColor">
+              <i className="fa-solid fa-check text-secondaryColor"></i>
               {`Delievery in ${deliveryTime} min `}
             </li>
-            <li class="text-xs text-paragraphColor">
-              <i class="fa-solid fa-check text-secondaryColor"></i>
+            <li className="text-xs text-paragraphColor">
+              <i className="fa-solid fa-check text-secondaryColor"></i>
               {m(totalRatings, 2)}+ Ratings
             </li>
-            <li class="text-xs text-paragraphColor">
-              <i class="fa-solid fa-check text-secondaryColor"></i>
+            <li className="text-xs text-paragraphColor">
+              <i className="fa-solid fa-check text-secondaryColor"></i>
               Best Service
             </li>
-            <li class="text-xs text-paragraphColor">
-              <i class="fa-solid fa-check text-secondaryColor"></i>
+            <li className="text-xs text-paragraphColor">
+              <i className="fa-solid fa-check text-secondaryColor"></i>
               {`${locality}, ${areaName}`}
             </li>
-            <li class="text-xs text-paragraphColor">
-              <i class="fa-solid fa-check text-secondaryColor"></i>
+            <li className="text-xs text-paragraphColor">
+              <i className="fa-solid fa-check text-secondaryColor"></i>
               {costForTwoMessage}
             </li>
-            <li class="text-xs text-paragraphColor">
-              <i class="fa-solid fa-check text-secondaryColor"></i>
+            <li className="text-xs text-paragraphColor">
+              <i className="fa-solid fa-check text-secondaryColor"></i>
               Health Protocol
             </li>
           </ul>

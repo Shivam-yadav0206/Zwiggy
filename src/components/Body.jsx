@@ -31,18 +31,18 @@ export const Body = () => {
       <div className="container">
         <div className="mx-auto text-center">
           <section id="home">
-            <div class="container flex flex-col items-center gap-10 md:flex-row">
-              <div class="mx-auto md:basis-1/2 lg:basis-2/5 animate-movingY">
+            <div className="container flex flex-col items-center gap-10 md:flex-row">
+              <div className="mx-auto md:basis-1/2 lg:basis-2/5 animate-movingY">
                 <img
                   src={Home1}
                   alt="home image"
-                  class="home__image w-60 md:w-full"
+                  className="home__image w-60 md:w-full"
                 />
               </div>
 
-              <div class="home__content text-center md:basis-1/2 md:text-start lg:basis-3/5">
-                <h1 class="home__title">HAPPY TUMMY WITH TASTY FOOD ITEMS.</h1>
-                <div class="separator mx-auto md:mx-0"></div>
+              <div className="home__content text-center md:basis-1/2 md:text-start lg:basis-3/5">
+                <h1 className="home__title">HAPPY TUMMY WITH TASTY FOOD ITEMS.</h1>
+                <div className="separator mx-auto md:mx-0"></div>
                 <p className="paragraph">
                   Welcome to FOODMATA – a culinary journey inspired by the
                   visionary teachings of Akshay Saini, CEO of <a></a>
@@ -50,94 +50,94 @@ export const Body = () => {
                   renowned figure in the realm of web development and an
                   influential YouTube personality.
                 </p>
-                <div class="text-base flex items-center justify-center gap-4 py-10 md:justify-start md:gap-20">
-                  <div class="text-center">
-                    <i class="fa-solid fa-utensils text-secondaryColor text-4xl"></i>
+                <div className="text-base flex items-center justify-center gap-4 py-10 md:justify-start md:gap-20">
+                  <div className="text-center">
+                    <i className="fa-solid fa-utensils text-secondaryColor text-4xl"></i>
                     <br />
                     Delicious
                   </div>
 
-                  <div class="text-center">
-                    <i class="fa-solid fa-droplet text-secondaryColor text-4xl"></i>
+                  <div className="text-center">
+                    <i className="fa-solid fa-droplet text-secondaryColor text-4xl"></i>
                     <br />
                     Fresh
                   </div>
 
-                  <div class="text-center">
-                    <i class="fa-brands fa-envira text-secondaryColor text-4xl"></i>
+                  <div className="text-center">
+                    <i className="fa-brands fa-envira text-secondaryColor text-4xl"></i>
                     <br />
                     Organic
                   </div>
                 </div>
 
-                <button class="btn btn-primary">learn more</button>
+                <button className="btn btn-primary">learn more</button>
               </div>
             </div>
           </section>
           {/* <!--~~~~~~~~~~~~~~~ Category ~~~~~~~~~~~~~~~--> */}
           <section id="category">
-            <div class="container flex flex-col gap-5 md:flex-row">
+            <div className="container flex flex-col gap-5 md:flex-row">
               {/* <!-- card 1 --> */}
-              <div class="category__card bg-secondaryColor flex py-3 rounded-lg overflow-hidden md:flex-1">
-                <div class="basis-1/3 relative">
+              <div className="category__card bg-secondaryColor flex py-3 rounded-lg overflow-hidden md:flex-1">
+                <div className="basis-1/3 relative">
                   <img
                     src={Category1}
                     alt="category image"
-                    class="absolute w-28 -bottom-4 -left-4"
+                    className="absolute w-28 -bottom-4 -left-4"
                   />
                 </div>
 
                 <div>
-                  <div class="mb-2">
-                    <h4 class="card__title">Quick bites</h4>
-                    <p class="text-xs">Lorem ipsum dolor sit.</p>
+                  <div className="mb-2">
+                    <h4 className="card__title">Quick bites</h4>
+                    <p className="text-xs">Lorem ipsum dolor sit.</p>
                   </div>
 
-                  <a href="#" class="text-blackColor cursor-pointer">
+                  <a href="#" className="text-blackColor cursor-pointer">
                     Buy online
                   </a>
                 </div>
               </div>
 
               {/* <!-- card 2 --> */}
-              <div class="category__card bg-redColor flex py-3 rounded-lg overflow-hidden md:flex-1">
-                <div class="basis-1/3 relative">
+              <div className="category__card bg-redColor flex py-3 rounded-lg overflow-hidden md:flex-1">
+                <div className="basis-1/3 relative">
                   <img
                     src={Category2}
                     alt="category image"
-                    class="absolute w-28 -bottom-4 -left-4"
+                    className="absolute w-28 -bottom-4 -left-4"
                   />
                 </div>
 
                 <div>
-                  <div class="mb-2">
-                    <h4 class="card__title">Snacks</h4>
-                    <p class="text-xs">Lorem ipsum dolor sit.</p>
+                  <div className="mb-2">
+                    <h4 className="card__title">Snacks</h4>
+                    <p className="text-xs">Lorem ipsum dolor sit.</p>
                   </div>
 
-                  <a href="#" class="text-secondaryColor cursor-pointer">
+                  <a href="#" className="text-secondaryColor cursor-pointer">
                     Buy online
                   </a>
                 </div>
               </div>
 
               {/* <!-- card 3 --> */}
-              <div class="category__card bg-greenColor flex py-3 rounded-lg overflow-hidden md:flex-1">
-                <div class="basis-1/3 relative">
+              <div className="category__card bg-greenColor flex py-3 rounded-lg overflow-hidden md:flex-1">
+                <div className="basis-1/3 relative">
                   <img
                     src={Category3}
                     alt="category image"
-                    class="absolute w-28 -bottom-4 -left-4"
+                    className="absolute w-28 -bottom-4 -left-4"
                   />
                 </div>
 
                 <div>
-                  <div class="mb-2">
-                    <h4 class="card__title">Bevereges</h4>
-                    <p class="text-xs">Lorem ipsum dolor sit.</p>
+                  <div className="mb-2">
+                    <h4 className="card__title">Bevereges</h4>
+                    <p className="text-xs">Lorem ipsum dolor sit.</p>
                   </div>
 
-                  <a href="#" class="text-secondaryColor cursor-pointer">
+                  <a href="#" className="text-secondaryColor cursor-pointer">
                     Buy online
                   </a>
                 </div>
@@ -146,41 +146,41 @@ export const Body = () => {
           </section>
           {/* <!--~~~~~~~~~~~~~~~ Promo ~~~~~~~~~~~~~~~--> */}
           <section id="promo">
-            <div class="container flex flex-col gap-5 lg:gap-10 lg:flex-row">
+            <div className="container flex flex-col gap-5 lg:gap-10 lg:flex-row">
               {/* <!-- card 1 --> */}
-              <div class="promo__card-1 bg-primaryColorLight dark:bg-darkColorLight flex flex-col p-5 rounded-lg md:flex-row md:items-center lg:flex-row-reverse lg:flex-1">
+              <div className="promo__card-1 bg-primaryColorLight dark:bg-darkColorLight flex flex-col p-5 rounded-lg md:flex-row md:items-center lg:flex-row-reverse lg:flex-1">
                 <img
                   src={Offer1}
                   alt="promo image"
-                  class="w-40 mx-auto hover:animate-movingY md:mx-5"
+                  className="w-40 mx-auto hover:animate-movingY md:mx-5"
                 />
 
-                <div class="space-y-2 pt-5 md:pt-0">
-                  <p class="text-xs text-secondaryColor">Payday promo</p>
-                  <h3 class="card__title">GET A 10% DISCOUNT ON PAYDAY WEEK</h3>
-                  <p class="paragraph">
+                <div className="space-y-2 pt-5 md:pt-0">
+                  <p className="text-xs text-secondaryColor">Payday promo</p>
+                  <h3 className="card__title">GET A 10% DISCOUNT ON PAYDAY WEEK</h3>
+                  <p className="paragraph">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   </p>
-                  <a href="#" class="text-xs text-secondaryColor">
+                  <a href="#" className="text-xs text-secondaryColor">
                     Buy online
                   </a>
                 </div>
               </div>
 
-              <div class="promo__card-2 bg-primaryColorLight dark:bg-darkColorLight flex flex-col p-5 rounded-lg md:flex-row md:items-center lg:flex-row-reverse lg:flex-1">
+              <div className="promo__card-2 bg-primaryColorLight dark:bg-darkColorLight flex flex-col p-5 rounded-lg md:flex-row md:items-center lg:flex-row-reverse lg:flex-1">
                 <img
                   src={Offer2}
                   alt="promo image"
-                  class="w-40 mx-auto hover:animate-movingY md:mx-5"
+                  className="w-40 mx-auto hover:animate-movingY md:mx-5"
                 />
 
-                <div class="space-y-2 pt-5 md:pt-0">
-                  <p class="text-xs text-secondaryColor">Payday promo</p>
-                  <h3 class="card__title">GET A 10% DISCOUNT ON PAYDAY WEEK</h3>
-                  <p class="paragraph">
+                <div className="space-y-2 pt-5 md:pt-0">
+                  <p className="text-xs text-secondaryColor">Payday promo</p>
+                  <h3 className="card__title">GET A 10% DISCOUNT ON PAYDAY WEEK</h3>
+                  <p className="paragraph">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   </p>
-                  <a href="#" class="text-xs text-secondaryColor">
+                  <a href="#" className="text-xs text-secondaryColor">
                     Buy online
                   </a>
                 </div>

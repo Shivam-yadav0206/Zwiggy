@@ -19,13 +19,21 @@ const InstaMart = lazy(() => import("./components/InstaMart"));
 
 const AppLayout = () => {
   const [isModalOpen, setIsModalOpen] = useState(true);
-
+const [theme, setTheme] = useState("light");
   useEffect(() => {
     const shouldDisplayModal = sessionStorage.getItem("displayCORSModal");
     if (shouldDisplayModal === "false") {
       setIsModalOpen(false);
     }
   }, []);
+
+    useEffect(() => {
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    }, [theme]);
 
   const handleSetCORSModal = (value) => {
     sessionStorage.setItem("displayCORSModal", value.toString());
@@ -36,28 +44,30 @@ const AppLayout = () => {
   if (isModalOpen) return <CORSWarn setIsModalOpen={setIsModalOpen} />;
 
   return (
-    <Provider store={store}>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Body />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<ContactUs />} />
-        <Route path="/restaurant/:resId" element={<RestaurantMenu />} />
-        <Route
-          path="/instamart"
-          element={
-            <Suspense fallback={<HomeShimmer />}>
-              <InstaMart />
-            </Suspense>
-          }
-        />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/cancel" element={<Cancel />} />
-        <Route path="/success" element={<Success />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
-      <Footer />
-    </Provider>
+    <div>
+      <Provider store={store}>
+        <Header setTheme={setTheme} theme={theme} />
+        <Routes>
+          <Route path="/" element={<Body />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/restaurant/:resId" element={<RestaurantMenu />} />
+          <Route
+            path="/instamart"
+            element={
+              <Suspense fallback={<HomeShimmer />}>
+                <InstaMart />
+              </Suspense>
+            }
+          />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/cancel" element={<Cancel />} />
+          <Route path="/success" element={<Success />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+        <Footer />
+      </Provider>
+    </div>
   );
 };
 
@@ -67,3 +77,31 @@ ReactDOM.render(
   </Router>,
   document.getElementById("root")
 );
+
+// console.log(themeBtn)
+
+//     if (localStorage.getItem("mode") == "dark") {
+//       darkMode();
+//     } else {
+//       lightMode();
+//     }
+
+//     themeBtn.addEventListener("click", (e) => {
+//       if (localStorage.getItem("mode") == "light") {
+//         darkMode();
+//       } else {
+//         lightMode();
+//       }
+//     });
+
+//     function darkMode() {
+//       html.classList.add("dark");
+//       //themeBtn.classList.replace("ri-moon-line", "ri-sun-line");
+//       localStorage.setItem("mode", "dark");
+//     }
+
+//     function lightMode() {
+//       html.classList.remove("dark");
+//       //themeBtn.classList.replace("ri-sun-line", "ri-moon-line");
+//       localStorage.setItem("mode", "light");
+//     }

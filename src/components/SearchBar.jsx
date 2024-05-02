@@ -8,9 +8,9 @@ const SearchBar = ({
 }) => {
   return filteredRestaurants?.length > 0 ? (
     <section id="contact" className="flex  justify-center mb-8 mt-[-2rem]">
-      <div class="flex flex-col gap-5 md:items-center md:flex-row">
-        <div class="max-w-[25rem] flex flex-col gap-3 md:flex-row md:flex-1 justify-center mt-3">
-          {/* <input type="email" placeholder="Email address" class="p-2 text-blackColor rounded-lg outline-none md:w-full"> */}
+      <div className="flex flex-col gap-5 md:items-center md:flex-row">
+        <div className="max-w-[25rem] flex flex-col gap-3 md:flex-row md:flex-1 justify-center mt-3">
+          {/* <input type="email" placeholder="Email address" className="p-2 text-blackColor rounded-lg outline-none md:w-full"> */}
           <input
             data-testid="search-input"
             type="text"
@@ -31,8 +31,8 @@ const SearchBar = ({
           </button>
           {/* <a
             href=""
-            class="flex items-center justify-center gap-2 btn bg-blackColor hover:opacity-75">
-            <i class="fa-solid fa-paper-plane"></i>
+            className="flex items-center justify-center gap-2 btn bg-blackColor hover:opacity-75">
+            <i className="fa-solid fa-paper-plane"></i>
             Subscribe
           </a> */}
         </div>

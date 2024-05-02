@@ -74,7 +74,7 @@ function Cart() {
                 </div>
               </div>
 
-              <div class="separator mx-auto"></div>
+              <div className="separator mx-auto"></div>
               <div className="menu__items">
                 <ul className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
                   {cartItems?.map((item, index) => (
@@ -99,7 +99,7 @@ function Cart() {
               src="https://cdni.iconscout.com/illustration/premium/thumb/sorry-item-not-found-3328225-2809510.png"
               alt="No Item Found"
             />
-            <p class="text-blk heading">No Item Found</p>
+            <p className="text-blk heading">No Item Found</p>
           </div>
         )}
       </div>

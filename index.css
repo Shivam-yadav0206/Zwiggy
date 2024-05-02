@@ -3040,14 +3040,6 @@ section{
   a-z-a--z:  !important;
 }
 
-.tabs_wrap ul li:hover,
-.tabs_wrap ul li.active{
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 204 0 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
 .modal-cont {
   margin: 0;
   background-color: white;
@@ -3086,6 +3078,14 @@ section{
        user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+}
+
+.tabs_wrap ul li:hover,
+.tabs_wrap ul li.active{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 204 0 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 @media (min-width: 480px){

@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import useOnline from "../utils/useOnline";
 
-function Header() {
+function Header({setTheme, theme}) {
   const cart = useSelector((store) => store.cart.items);
   const isOnline = useOnline();
+
   return (
     // <div className="nav">
     //   <input type="checkbox" id="nav-check" />
@@ -92,8 +93,12 @@ function Header() {
 
         <div className="flex items-center gap-5">
           <i
-            className="ri-moon-line cursor-pointer ml-4 text-xl"
+            onClick={() => setTheme((prevTheme) => prevTheme === "dark"? setTheme("light"): setTheme("dark"))}
+            className={`${
+              theme === "dark" ? "ri-sun-line" : "ri-moon-line"
+            } cursor-pointer ml-4 text-xl`}
             id="theme-toggle"></i>
+          <p>{theme }</p>
 
           <div className="md:hidden" id="hamburger">
             <i className="ri-menu-2-line cursor-pointer text-xl"></i>
@@ -101,7 +106,6 @@ function Header() {
         </div>
       </nav>
     </header>
-    
   );
 }
 
