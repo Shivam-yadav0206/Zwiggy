@@ -98,7 +98,6 @@ function Header({setTheme, theme}) {
               theme === "dark" ? "ri-sun-line" : "ri-moon-line"
             } cursor-pointer ml-4 text-xl`}
             id="theme-toggle"></i>
-          <p>{theme }</p>
 
           <div className="md:hidden" id="hamburger">
             <i className="ri-menu-2-line cursor-pointer text-xl"></i>
