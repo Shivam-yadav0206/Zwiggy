@@ -19,7 +19,8 @@ const InstaMart = lazy(() => import("./components/InstaMart"));
 
 const AppLayout = () => {
   const [isModalOpen, setIsModalOpen] = useState(true);
-const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("light");
+
   useEffect(() => {
     const shouldDisplayModal = sessionStorage.getItem("displayCORSModal");
     if (shouldDisplayModal === "false") {
@@ -27,17 +28,15 @@ const [theme, setTheme] = useState("light");
     }
   }, []);
 
-    useEffect(() => {
-      if (theme === "dark") {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
-    }, [theme]);
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
 
-  const handleSetCORSModal = (value) => {
-    sessionStorage.setItem("displayCORSModal", value.toString());
-  };
+
 
   if (window.location.pathname === "/success") return <Success />;
   if (window.location.pathname === "/cancel") return <Cancel />;

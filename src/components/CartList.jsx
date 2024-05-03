@@ -1,6 +1,9 @@
 
 import { useDispatch } from "react-redux";
 import { removeItem, removeOneQuantity, addItem } from "../utils/cartSlice";
+import { sr } from "../utils/helper";
+import { useEffect } from "react";
+
 const CartList = ({ item }) => {
   const { id, name, price, image, quantity } = item;
   const dispatch = useDispatch();
@@ -16,6 +19,15 @@ const CartList = ({ item }) => {
   const handleAddOne = (item) => {
     dispatch(addItem(item));
   };
+
+    useEffect(() => {
+      sr.reveal(".menu__items", { origin: "left" });
+
+      // Clean up ScrollReveal instance on component unmount
+      return () => {
+        sr.destroy();
+      };
+    }, []);
 
   return (
     <li className="item_wrap food">

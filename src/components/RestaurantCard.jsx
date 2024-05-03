@@ -13,6 +13,9 @@ const RestaurantCard = ({
   cloudinaryImageId,
   costForTwo,
 }) => {
+
+
+  
   return (
     <li className="item_wrap food">
       <div className="h-56 grid place-items-center bg-primaryColorLight dark:bg-darkColorLight dark:hover:bg-secondaryColor rounded-3xl hover:bg-secondaryColor ease-linear duration-200 lg:h-40">

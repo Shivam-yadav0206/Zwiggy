@@ -2,6 +2,8 @@ import { IMAGE_CDN_URL } from "../config";
 import { useDispatch } from "react-redux";
 import { addItem } from "../utils/cartSlice";
 import { useSelector } from "react-redux";
+import { sr } from "../utils/helper";
+import { useEffect } from "react";
 
 const ItemCard = ({ item }) => {
   const { id, name, price, imageId } = item;
@@ -20,8 +22,18 @@ const ItemCard = ({ item }) => {
       })
     );
   };
-    const itemInCart = cart.find((cartItem) => cartItem.id === id);
-    const quantityInCart = itemInCart ? itemInCart.quantity : 0;
+  const itemInCart = cart.find((cartItem) => cartItem.id === id);
+  const quantityInCart = itemInCart ? itemInCart.quantity : 0;
+
+  useEffect(() => {
+    sr.reveal(".menu__items", { origin: "left" });
+
+    //Clean up ScrollReveal instance on component unmount
+    return () => {
+      sr.destroy();
+    };
+  }, []);
+
   //console.log(item)
   return (
     <li className="item_wrap food">

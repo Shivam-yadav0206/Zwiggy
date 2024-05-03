@@ -1,6 +1,6 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { IMAGE_CDN_URL } from "../config";
-
+import { sr } from "../utils/helper";
 function m(n, d) {
   let x = ("" + n).length; // Calculate the number of digits in n
   const p = Math.pow; // Store Math.pow in a variable p
@@ -14,6 +14,15 @@ function m(n, d) {
 }
 
 function RestaurantInfo({ info }) {
+    useEffect(() => {
+      sr.reveal(".about__img", { origin: "bottom" });
+      sr.reveal(".about__content", { origin: "top" });
+
+      // Clean up ScrollReveal instance on component unmount
+      return () => {
+        sr.destroy();
+      };
+    }, []);
   const {
     name,
     cloudinaryImageId,

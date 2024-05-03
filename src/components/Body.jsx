@@ -4,15 +4,14 @@ import CardList from "./CardList";
 import useRestaurantlist from "../utils/useRestaurantlist";
 import useOnline from "../utils/useOnline";
 import CORSWarn from "./CORSwarn";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Category1 from "../img/burger-1.png";
 import Category2 from "../img/snack-1.png";
 import Category3 from "../img/beverage-2.png";
 import Offer1 from "../img/promo-1.png";
 import Offer2 from "../img/promo-2.png";
 import Home1 from "../img/home-image.png";
-
-
+import { sr } from "../utils/helper";
 
 export const Body = () => {
   const {
@@ -26,6 +25,21 @@ export const Body = () => {
   const isOnline = useOnline();
 
   if (!isOnline) return <h1>Please check your internet connection!!!</h1>;
+
+  useEffect(() => {
+    sr.reveal(".home__image");
+    sr.reveal(".home__content", { origin: "bottom" });
+    sr.reveal(".category__card", { interval: 300 });
+    sr.reveal(".promo__card-1", { origin: "left" });
+    sr.reveal(".promo__card-2", { origin: "right" });
+    sr.reveal(".menu__items", { origin: "left" });
+
+    // Clean up ScrollReveal instance on component unmount
+    return () => {
+      sr.destroy();
+    };
+  }, []);
+
   return (
     <>
       <div className="container">
@@ -41,7 +55,9 @@ export const Body = () => {
               </div>
 
               <div className="home__content text-center md:basis-1/2 md:text-start lg:basis-3/5">
-                <h1 className="home__title">HAPPY TUMMY WITH TASTY FOOD ITEMS.</h1>
+                <h1 className="home__title">
+                  HAPPY TUMMY WITH TASTY FOOD ITEMS.
+                </h1>
                 <div className="separator mx-auto md:mx-0"></div>
                 <p className="paragraph">
                   Welcome to FOODMATA – a culinary journey inspired by the
@@ -157,7 +173,9 @@ export const Body = () => {
 
                 <div className="space-y-2 pt-5 md:pt-0">
                   <p className="text-xs text-secondaryColor">Payday promo</p>
-                  <h3 className="card__title">GET A 10% DISCOUNT ON PAYDAY WEEK</h3>
+                  <h3 className="card__title">
+                    GET A 10% DISCOUNT ON PAYDAY WEEK
+                  </h3>
                   <p className="paragraph">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   </p>
@@ -176,7 +194,9 @@ export const Body = () => {
 
                 <div className="space-y-2 pt-5 md:pt-0">
                   <p className="text-xs text-secondaryColor">Payday promo</p>
-                  <h3 className="card__title">GET A 10% DISCOUNT ON PAYDAY WEEK</h3>
+                  <h3 className="card__title">
+                    GET A 10% DISCOUNT ON PAYDAY WEEK
+                  </h3>
                   <p className="paragraph">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   </p>
