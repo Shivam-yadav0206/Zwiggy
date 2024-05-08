@@ -40,7 +40,7 @@
 
 const ContactUs = () => {
   return (
-    <section id="contact" className="bg-secondaryColor py-16">
+    <section id="contact" className="bg-blue-600 py-16">
       <div className="container flex flex-col gap-5 md:items-center md:flex-row">
         <div className="space-y-4 md:flex-1">
           <h2 className="section__title text-blackColor">Connect with us</h2>

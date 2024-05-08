@@ -66,8 +66,8 @@ const ItemCard = ({ item }) => {
           <button
             data-testid="addBtn"
             onClick={() => handleAddItem(item)}
-            className="btn btn-primary">
-            Add to Cart {quantityInCart > 0? `(${quantityInCart})`: null}
+            className="px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            Add to Cart {quantityInCart > 0 ? `(${quantityInCart})` : null}
           </button>
         </div>
       </div>

@@ -3,8 +3,7 @@ import SearchBar from "./SearchBar";
 import CardList from "./CardList";
 import useRestaurantlist from "../utils/useRestaurantlist";
 import useOnline from "../utils/useOnline";
-import CORSWarn from "./CORSwarn";
-import { useState, useEffect } from "react";
+import {  useEffect, useRef } from "react";
 import Category1 from "../img/burger-1.png";
 import Category2 from "../img/snack-1.png";
 import Category3 from "../img/beverage-2.png";
@@ -25,6 +24,11 @@ export const Body = () => {
   const isOnline = useOnline();
 
   if (!isOnline) return <h1>Please check your internet connection!!!</h1>;
+  const restaurantCardRef = useRef();
+    const scrollToRestaurantCard = () => {
+      // Scroll to the Restaurant card component
+      restaurantCardRef.current.scrollIntoView({ behavior: "smooth" });
+    };
 
   useEffect(() => {
     sr.reveal(".home__image");
@@ -109,7 +113,10 @@ export const Body = () => {
                     <p className="text-xs">Lorem ipsum dolor sit.</p>
                   </div>
 
-                  <a href="#" className="text-blackColor cursor-pointer">
+                  <a
+                    href="#"
+                    className="text-blackColor cursor-pointer"
+                    onClick={scrollToRestaurantCard}>
                     Buy online
                   </a>
                 </div>
@@ -216,7 +223,9 @@ export const Body = () => {
           {loading ? (
             <HomeShimmer />
           ) : (
-            <CardList filteredRestaurants={filteredRestaurants} />
+            <div id="restaurantCard" ref={restaurantCardRef}>
+              <CardList filteredRestaurants={filteredRestaurants} />
+            </div>
           )}
         </div>
       </div>

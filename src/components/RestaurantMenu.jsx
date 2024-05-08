@@ -3,8 +3,6 @@ import RestaurantInfo from "./RestaurantInfo";
 import HomeShimmer from "./Shimmer";
 import ItemCard from "./MenuCard";
 import useRestaurant from "../utils/useRestaurant";
-import { sr } from "../utils/helper";
-import { useEffect } from "react";
 function RestaurantMenu() {
   const { resId } = useParams();
   const [restaurantInfo, menuList] = useRestaurant(resId);
